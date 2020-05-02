@@ -1,1 +1,3 @@
-#ABC120_C
+S = str(input())
+cnt = int()
+
