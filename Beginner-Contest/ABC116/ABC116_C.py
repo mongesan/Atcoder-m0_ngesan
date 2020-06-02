@@ -1,17 +1,18 @@
-N=int(input())
-h=list(map(int, input().split()))
-cnt=0
-sp=0
-while sum(h)!=0:
-    for i in range(N):
-        if h[i]==0:
-            if i-sp!=0:
-                cnt+=1
-            sp=i+1
-            print(h)
+n = int(input())
+h = list(map(int, input().split()))
+cnt = int()
+for i in reversed(range(1, max(h)+1)):
+    tmp = list()
+    for j in h:
+        if i <= j:
+            tmp.append(1)
         else:
-            h[i] -= 1
-    if i-sp+1!=0:
-        cnt+=1
-    print(h)
+            tmp.append(0)
+    #print(tmp)
+    if tmp[0]==1:
+        cnt += 1
+    for j in range(1, n):
+        if tmp[j]-tmp[j-1] == 1:
+            cnt += 1
+
 print(cnt)
