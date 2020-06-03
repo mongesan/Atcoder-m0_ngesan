@@ -1,14 +1,15 @@
-import math
+from fractions import gcd
 from functools import reduce
 
 def gcd_list(numbers):
-    return reduce(math.gcd, numbers)
+    return reduce(gcd, numbers)
 
+N, X=map(int, input().split())
+x=list(map(int, input().split()))
+y=list()
 
-N, X = map(int, input().split())
-x = list(map(int, input().split()))
-y = []
-for i in range(N-1):
-    y.append(x[i+1]-x[i])
+for i in x:
+    y.append(abs(X-i))
 
-print(if gcd_list(y))
+#print(y)
+print(gcd_list(y))
