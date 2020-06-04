@@ -1,1 +1,2 @@
-#ABC101_C
+N, K = map(int, input().split())
+A = list(map(int, input().split()))
