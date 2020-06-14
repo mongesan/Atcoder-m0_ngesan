@@ -1,16 +1,8 @@
-N = int(input())
-a = list(map(int, input().split()))
+n = int(input())
+A = list(map(int, input().split()))
+cnt = int()
 
-cnt = 0
-ans = 0
-while cnt!=3:
-    for n in range(N):
-        if a[n]%2!=0 or (N!=1 and n):
-            cnt+=1
-            a[n] *= 3
-        else:
-            a[n] //= 2
-    if cnt!=3:
-        ans += 1
+for a in A:
+    cnt += format(a, 'b')[::-1].find('1')
 
-print(ans)
+print(cnt)
