@@ -16,6 +16,8 @@ for d in reversed(range(1,digit+1)):
 ans.append(n-1)
 name=str()
 for i in ans:
+    if i==25:
+        name+=alp[25]
     name+=alp[i]
 #print(ans)
 print(name)

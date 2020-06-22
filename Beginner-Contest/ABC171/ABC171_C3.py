@@ -1,5 +1,5 @@
-for i2 in range(1,100):
-    alp = list()
+for i2 in range(1,704):
+    alp=['z']
     for ch in 'abcdefghijklmnopqrstuvwxyz':
         alp.append(ch)
     def Base_10_to_n(X, n):
@@ -13,13 +13,10 @@ for i2 in range(1,100):
 
     x = int()
     s = str()
-    l = Base_10_to_n(i2, 27)
+    l = Base_10_to_n(i2, 26)
+    l.reverse()
     #print(l)
     print(l)
     for i in l:
-        if x == len(l)-1:
-            alp.insert(0, '-')
-        s = alp[i] + s
-        x += 1
-
+        s += alp[i]
     print(i2,s)
