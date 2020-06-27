@@ -1,1 +1,1 @@
-#ABC029_A
+print(str(input())+'s')
