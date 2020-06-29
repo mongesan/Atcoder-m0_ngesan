@@ -1,19 +1,14 @@
-N, M = map(int, input().split())
-ifACL = [0]*N
-cWAL = [0]*N
-psL = []
-AC = 0
-WA = 0
-p = 0
-s = 0
-for _ in range(M):
-  p, s = map(str, input().split())
-  p = int(p)
-  if ifACL[p-1] == 0 and s == "WA":
-    cWAL[p-1] += 1
-  elif ifACL[p-1] == 0 and s == "AC":
-    AC += 1
-    WA += cWAL[p-1]
-    ifACL[p-1] = 1
-
-print(AC, WA)
+n, m=map(int, input().split())
+AC, WA=[0]*n, [0]*n
+ac, wa=0, 0
+for _ in range(m):
+  p, s=list(map(str, input().split()))
+  p=int(p)-1
+  if AC[p]==0 and s=='WA':
+    WA[p]+=1
+  elif AC[p]==0 and s=='AC':
+    AC[p]=1
+    wa+=WA[p]
+    ac+=1
+  
+print(ac, wa)
