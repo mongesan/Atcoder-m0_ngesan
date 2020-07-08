@@ -1,1 +1,1 @@
-#ABC078_C
+n,m=map(int, input().split())
