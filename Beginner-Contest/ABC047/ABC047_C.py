@@ -1,1 +1,1 @@
-#ABC047_C
+S=str(input())
