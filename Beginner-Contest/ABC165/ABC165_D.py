@@ -1,9 +1,6 @@
 from math import floor
-A,B,N=map(int, input().split())
-x=B//A
-cnt=0
-if A*x<B:
-    x+=1
+a,b,n=map(int, input().split())
+def f(a,b,x):
+    return(floor(a*x/b)-a*floor(x/b))
 
-while 
-print(x)
+print(f(a,b,min(b-1, n)))
