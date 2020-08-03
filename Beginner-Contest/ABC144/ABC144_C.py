@@ -1,1 +1,1 @@
-#ABC144_C
+a,b,x=map(int, input().split())
