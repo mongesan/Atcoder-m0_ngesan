@@ -1,1 +1,1 @@
-#ABC082_D
+n=int(input())
