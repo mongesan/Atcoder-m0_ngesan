@@ -1,27 +1,23 @@
-N, K = map(int, input().split())
+from collections import Counter
+n, k = map(int, input().split())
 A = list(map(int, input().split()))
-Kn = [0]*N
-l = [A[0]]
-p = A[1]
-i = 1
-while True:
-    Kn[p] = 1
-    print(p)
-    if Kn[A[p]-1] == 1:
-        print(l)
-        sp = l.index(A[p]-1)
-        ep = len(l)-1
+C = Counter([])
+X, Y = [], []
+m = 0
+for _ in range(n):
+    a = A[m]-1
+    C[m] += 1
+    X.append(m)
+    if C[a] != 0:
+        Y = X[X.index(a):]
+        X = X[:X.index(a)]
         break
-    elif i == K:
-        print(p+1)
-    l.append(A[p])
-    p = A[p]-1
-    i += 1
-l = l[sp:]
-K -= sp
-print(l, K)
-#print(sp, ep, l, K)
-if K % len(l) == 0:
-    print(l[len(l)-1])
+    m = a
+# print(X,Y)
+x = len(X)
+y = len(Y)
+if k <= x-1:
+    print(X[k]+1)
 else:
-    print(l[K % (len(l)-1)])
+    k -= x
+    print(Y[k-(k//y)*y]+1)
