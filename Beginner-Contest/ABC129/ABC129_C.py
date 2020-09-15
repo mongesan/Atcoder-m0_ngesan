@@ -1,26 +1,21 @@
-n, m=map(int, input().split())
-A = [int(input()) for i in range(m)]
-Fib = [0,1,2]
-for i in range(2,10**5-2):
-    Fib.append(Fib[i-1]+Fib[i])
-way=1
-i=1
-j=0
-cnt=1
-l=[]
-A.append(n)
-while i<=n:
-    if i==A[j]:
-        l.append(cnt-1)
-        print(cnt-1)
-        cnt=0
-        j+=1
-    i+=1
-    cnt+=1
-if l[0]==0:
-    del l[0]
-
-for i in l:
-    way*=Fib[i+1]
-
-print(way%1000000007)
+n,m=map(int, input().split())
+FIB=[0,2]
+x=1
+for i in range(n):
+    FIB.append(FIB[x-1]+FIB[x])
+    x+=1
+FIB[0]=0
+print(FIB)
+sp=0
+ans=1
+a=[0]
+for _ in range(m):
+    a.append(int(input()))
+a.append(n)
+print(a)
+for i in range(1,len(a)):
+    y=a[i]-a[i-1]-2
+    if i==1 and y==1:
+        ans*=1
+    else:
+        print(FIB[y])
