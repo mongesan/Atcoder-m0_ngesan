@@ -1,30 +1,16 @@
-n = int(input())
-S = str(input())
-r = []
-g = []
-b = []
+n=int(input())
+S=str(input())
+r=S.count('R')
+g=S.count('G')
+b=S.count('B')
+cnt=r*g*b
 for i in range(n):
-    if S[i] == 'R':
-        r.append(i)
-    elif S[i] == 'G':
-        g.append(i)
-    else:
-        b.append(i)
-#print(r, g, b)
-ans = 0
-for R in r:
-    for G in g:
-        i = min(R, G)
-        j = max(R, G)
-        for B in b:
-            if j < B:
-                if j-i != B-j:
-                    ans += 1
-            elif B < i:
-                if j-i != i-B:
-                    ans += 1
-            else:
-                if j-B != B-i:
-                    ans += 1
+    for a in range(1,n):
+        j=i+a
+        k=j+a
+        if k>=n:
+            break
+        if S[i]!=S[j] and S[j]!=S[k] and S[k]!=S[i]:
+            cnt-=1
 
-print(ans)
+print(cnt)
