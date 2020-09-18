@@ -13,4 +13,4 @@ for _ in range(m):
     else:
         m*=Fib[a-p]
     p=a
-print(n-p)
+print(m)
