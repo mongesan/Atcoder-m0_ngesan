@@ -1,11 +1,15 @@
-n=int(input())
-P=list(map(int, input().split()))
-ans=0
-n=1
-for i in P:
-    print(i,n)
-    if i==n:
-        ans+=1
-    n+=1
-print(ans)
-print(ans//2+ans%2)
+
+N = int(input())
+p = list(map(int, input().split()))
+
+cnt = 0
+
+for i in range(len(p)):
+    if p[i] == i+1:
+        if p[i] == N:
+            p[i-1], p[i] = p[i], p[i-1]
+        else:
+            p[i], p[i+1] = p[i+1], p[i]
+        cnt += 1
+
+print(cnt)
