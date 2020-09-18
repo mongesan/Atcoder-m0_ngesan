@@ -1,13 +1,13 @@
-s = str(input())
-q = int(input())
+s=str(input())
+q=int(input())
+Q=[]
+r=0
 for i in range(q):
-    tmp = tuple(map(str, input().split()))
-    if len(tmp) == 3:  # pattern 2
-        if int(tmp[1]) == 1:
-            s = tmp[2]+s
+    t,f,c=map(int, input().split())
+    if t==1:
+        if r==0:
+            r+=1
         else:
-            s += tmp[2]
+            r-=1
     else:
-        s = s[::-1]
-
-print(s)
+        Q.append((f,c))
