@@ -1,10 +1,5 @@
 # Atcoder-m0_ngesan(Python)
-## 概要
-私(もんげ～)のAtcoderの正答提出の管理リポジトリです。   
-maker.pyで初期ファイル(python)の生成ができます。    
-また、maker.pyを弄ることで.py以外の生成も可能です。
 
-## 作者のAtcoderの情報
 m0_ngesan - AtCoder   
 https://atcoder.jp/users/m0_ngesan    
 Atcoder Problems    
